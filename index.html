@@ -1,38 +1,62 @@
-<!-- TODO 1: Create the HTML Boilerplate -->
-
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preetham U - FullStack Java Developer</title>
- </head>
- <body>
-    <h1>Preetham U</h1>
-    <h2>Software Engineer</h2>
-    <hr>
-    <img src="./assets/images/WhatsApp Image 2025-07-22 at 14.09.23.jpeg" height="300">
-    <hr />
-    <h3>Hello! I’m an aspiring software engineer fueled by a love for coding and problem-solving. With a degree in Information Science and Engineering and a focus on Java backend development, I’m currently honing my skills in full-stack development. I’m excited to join a forward-thinking team where I can learn, innovate, and make a real impact!</h3>
-    <hr/>
-    <a href="./public/about.html">About Me.</a> 
-    <a href="./public/contact.html">Contact Me</a>
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <div class="top-left-container">
+      <div class="top-left-name">Preetham U</div>
+      <div class="top-left-photo">
+        <img
+          src="/Users/preethamu/Downloads/WhatsApp Image 2025-07-22 at 14.09.23.jpeg"
+          alt="Preetham U"
+          class="profile-photo"
+        />
+      </div>
+    </div>
 
-    <footer>
-    <p>© 2025 Preetham</p>
-  </footer>
- </body>
- </html>
+    <div class="right-intro">
+        <h2>Hello 👋</h2>
+        <p>
+            I’m Preetham, a graduate in Information Science & Engineering from NMAMIT, Nitte. Driven by a deep interest in engineering, I chose this field to explore innovative solutions and address real-world problems.
+		Over the course of my 4-year program, I’ve gained hands-on experience by building several tech projects that reflect my curiosity and commitment to learning.
+		My academic journey began at Jawahar Navodaya Vidyalaya (JNV), Shimoga, where I completed both my secondary and higher secondary education. More than academics, JNV instilled in me values that I believe are foundational to personal and professional success — integrity, compassion, empathy, patience, and leadership.
+		I believe these human qualities matter just as much — if not more — than technical skills, which anyone can learn over time, but character is built through experience.
+        </p>
+    </div>
+    <!-- Mobile Menu Button (visible only on small screens) -->
+    <div class="menu-button" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation Menu — shown on small screens only -->
+<div class="top-right-menu" id="navMenu">
+  <a href="education.html">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#interest">Interest</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- Existing bottom left menu for large screens -->
+<div class="left-bottom-links">
+  <a href="education.html">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#interest">Interest</a>
+  <a href="#contact">Contact</a>
+</div>
+
+  
+<script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('visible');
+    }
+  </script>
+  
+  </body>
+  
+
+
+</html>
