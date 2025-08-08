@@ -1,0 +1,177 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Animation */
+body {
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background: linear-gradient(45deg, #274c77, #eef0f1, #90a955);
+    background-size: 400% 400%;
+    animation: flowBackground 20s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes flowBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.top-left-container {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers children horizontally */
+    padding: clamp(8px, 1vw, 16px);
+    background: transparent;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Make the name container full width of the container and left align text */
+.top-left-name {
+    display: block; /* full width */
+    width: 100%;
+    padding: clamp(4px, 0.5vw, 8px) clamp(10px, 1vw, 16px);
+    font-size: clamp(3rem, 2vw + 0.5rem, 2rem);
+    font-weight: 600;
+    color: black;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    text-align: left; /* align text to left */
+}
+
+/* Center the photo below */
+.top-left-photo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.profile-photo {
+    width: clamp(70px, 30vw, 30vw);  
+    height: clamp(70px, 30vw, 30vw);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+
+.right-intro {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: clamp(280px, 50%, 600px);
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.3); /* readable over gradient */
+    padding: clamp(16px, 2vw, 32px);
+    border-radius: 12px;
+    z-index: 1;
+    text-align: left;
+}
+
+/* Heading style */
+.right-intro h2 {
+    margin-bottom: 0.5em;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Bottom-left link block (for desktop) */
+.left-bottom-links {
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+/* Individual links */
+a{
+    margin: 2px;
+}
+.left-bottom-links a,
+.top-right-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.left-bottom-links a:hover,
+.top-right-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
+}
+
+/* Hamburger Menu Button — hidden on desktops, shown on small screens */
+.menu-button {
+    display: none;
+    position: fixed;
+    top: 2%;
+    right: 4%;
+    font-size: 1.8rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+/* Top-right menu container (hidden by default) */
+.top-right-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: 4%;
+    background: rgba(255, 254, 254, 0.6);
+    padding: 12px;
+    border-radius: 8px;
+    z-index: 999;
+}
+.top-right-menu.visible {
+    display: flex;
+}
+
+/* Responsive overrides for small screens */
+@media (max-width: 768px) {
+    .left-bottom-links {
+        display: none; /* hide old menu */
+    }
+    .menu-button {
+        display: block; /* show hamburger */
+    }
+    /* Optional — increase size of name slightly for visibility */
+    .top-left-name {
+        font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
+    }
+}
+
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .right-intro {
+        width: 90%;
+        right: 5%;
+        top: 45%;
+        padding: 1em;
+    }
+}
+
